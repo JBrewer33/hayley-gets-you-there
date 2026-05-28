@@ -1,0 +1,8 @@
+# Publish only the live site: index.html + the logo.
+# Everything else (docs/, CLAUDE.md, README.md, CNAME, etc.) stays local.
+*
+!.gitignore
+!index.html
+!assets/
+assets/*
+!assets/logo.svg

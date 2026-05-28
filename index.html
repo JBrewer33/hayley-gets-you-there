@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- =====================================================================
+       PAGE INFO  —  edit the title / description that show in browser tabs
+       and when the link is shared.
+       ===================================================================== -->
+  <title>Hayley Marché Events + Travel — Coming Soon</title>
+  <meta name="description" content="Hayley Marché Events + Travel — meaningful events & unforgettable travel. Our new website is coming soon." />
+  <meta name="theme-color" content="#0E3A40" />
+
+  <!-- Social share preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hayley Marché Events + Travel" />
+  <meta property="og:description" content="Meaningful events & unforgettable travel. Our new website is coming soon." />
+  <meta property="og:url" content="https://hayleygetsyouthere.com" />
+
+  <!-- Favicon (reuses the logo) -->
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+
+  <!-- Fonts: Montserrat (brand) + a script face for the tagline flourish.
+       To change fonts, swap these and update --font-* in the CSS below. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =====================================================================
+       1. DESIGN TOKENS  —  ★ EDIT MOST THINGS HERE ★
+          Change colours, fonts and spacing in one place; everything below
+          references these variables.
+       ===================================================================== */
+    :root {
+      /* Brand colours (from the brand style guide) */
+      --color-bg:        #0E3A40;  /* deep teal — page background      */
+      --color-bg-soft:   #11464E;  /* slightly lighter teal (panels)   */
+      --color-text:      #F4EEE1;  /* cream — primary text             */
+      --color-text-soft: #C9D2CF;  /* muted cream/grey — secondary     */
+      --color-accent:    #C76B38;  /* copper/orange — links & accents  */
+      --color-accent-2:  #3E7A4E;  /* forest green — secondary accent  */
+      --color-line:      rgba(244, 238, 225, 0.18); /* hairline rules   */
+
+      /* Typography */
+      --font-heading: "Montserrat", system-ui, sans-serif;
+      --font-body:    "Montserrat", system-ui, sans-serif;
+      --font-script:  "Dancing Script", cursive;
+
+      /* Fluid type scale (min … max via viewport) */
+      --size-eyebrow:  clamp(0.7rem, 0.6rem + 0.4vw, 0.85rem);
+      --size-wordmark: clamp(2rem, 1.3rem + 3.6vw, 3.4rem);
+      --size-sub:      clamp(0.85rem, 0.7rem + 0.7vw, 1.1rem);
+      --size-script:   clamp(1.6rem, 1.1rem + 2.4vw, 2.4rem);
+      --size-message:  clamp(0.95rem, 0.9rem + 0.4vw, 1.1rem);
+      --size-contact:  clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
+
+      /* Layout */
+      --content-width: 36rem;   /* max width of the centred column */
+      --gap:           1.5rem;  /* vertical rhythm between blocks  */
+    }
+
+    /* =====================================================================
+       2. BASE
+       ===================================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;   /* fallback for browsers without svh support  */
+      min-height: 100svh;  /* small viewport height — avoids the mobile  */
+                           /* address-bar jump; ignored where unsupported */
+      display: grid;
+      place-items: center;
+      padding: clamp(1.5rem, 5vw, 4rem);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--color-accent); }
+
+    /* Visible keyboard focus for accessibility */
+    a:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* =====================================================================
+       3. LAYOUT
+       ===================================================================== */
+    .card {
+      width: 100%;
+      max-width: var(--content-width);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--gap);
+    }
+
+    /* =====================================================================
+       4. COMPONENTS
+       ===================================================================== */
+
+    /* Logo — swap assets/logo.svg for the real file when available */
+    .logo {
+      width: clamp(80px, 18vw, 120px);
+      height: auto;
+    }
+
+    /* "Coming soon" eyebrow */
+    .eyebrow {
+      margin: 0;
+      font-size: var(--size-eyebrow);
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    /* Wordmark block */
+    .wordmark { margin: 0; }
+
+    .wordmark__name {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: var(--size-wordmark);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+
+    .wordmark__sub {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: var(--size-sub);
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--color-text-soft);
+    }
+
+    /* Script tagline flourish */
+    .tagline {
+      margin: 0;
+      font-family: var(--font-script);
+      font-size: var(--size-script);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--color-accent);
+    }
+
+    /* Thin divider */
+    .divider {
+      width: 3rem;
+      height: 0;
+      margin: 0.25rem 0;
+      border: 0;
+      border-top: 2px solid var(--color-accent-2);
+    }
+
+    /* Coming-soon message */
+    .message {
+      margin: 0;
+      max-width: 30rem;
+      font-size: var(--size-message);
+      color: var(--color-text);
+    }
+
+    /* Contact list */
+    .contact {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: var(--size-contact);
+    }
+
+    .contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      max-width: 100%;
+      overflow-wrap: anywhere;  /* let the long email break instead of
+                                   overflowing on very narrow screens */
+      color: var(--color-text);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .contact a:hover { color: var(--color-accent); }
+
+    .contact svg {
+      flex: none;
+      width: 1.15rem;
+      height: 1.15rem;
+      color: var(--color-accent);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 0.5rem;
+      font-size: var(--size-eyebrow);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-soft);
+    }
+    .footer p { margin: 0.35rem 0; }
+
+    /* =====================================================================
+       5. MOTION  —  gentle fade-in, disabled if the user prefers no motion
+       ===================================================================== */
+    @media (prefers-reduced-motion: no-preference) {
+      .card { animation: rise 0.8s ease both; }
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =======================================================================
+       CONTENT  —  ★ EDIT THE TEXT / LINKS BELOW ★
+       Each block is labelled. Update the wording, email, and Instagram
+       handle to taste; the layout adjusts automatically.
+       ======================================================================= -->
+  <main class="card">
+
+    <!-- LOGO  →  to use the official logo, replace assets/logo.svg
+                  (or point this src at the real file, e.g. assets/logo.png) -->
+    <img class="logo" src="assets/logo.svg" width="120" height="120"
+         alt="Hayley Marché Events + Travel logo" />
+
+    <p class="eyebrow">Coming Soon</p>
+
+    <h1 class="wordmark">
+      <span class="wordmark__name">Hayley Marché</span>
+      <span class="wordmark__sub">Events&nbsp;+&nbsp;Travel</span>
+    </h1>
+
+    <p class="tagline">let&rsquo;s get you here</p>
+
+    <hr class="divider" />
+
+    <p class="message">
+      Meaningful events &amp; unforgettable travel. Our new website is on its
+      way &mdash; in the meantime, reach out and let&rsquo;s start planning.
+    </p>
+
+    <!-- CONTACT  →  update the email + Instagram handle here -->
+    <ul class="contact">
+      <li>
+        <a href="mailto:hayley@hayleygetsyouthere.com">
+          <!-- envelope icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+          hayley@hayleygetsyouthere.com
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/hayleygetsyouthere" target="_blank" rel="noopener">
+          <!-- instagram icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+          </svg>
+          @hayleygetsyouthere
+        </a>
+      </li>
+      <li>
+        <a href="https://hayleygetsyouthere.com" target="_blank" rel="noopener">
+          <!-- globe icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />
+          </svg>
+          hayleygetsyouthere.com
+        </a>
+      </li>
+    </ul>
+
+    <footer class="footer">
+      <p>Winter Garden, Florida</p>
+      <p>&copy; 2026 Hayley Marché Events + Travel</p>
+    </footer>
+
+  </main>
+</body>
+</html>
