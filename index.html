@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://hayleygetsyouthere.com" />
 
   <!-- Favicon (reuses the logo) -->
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
 
   <!-- Fonts: Montserrat (brand) + a script face for the tagline flourish.
        To change fonts, swap these and update --font-* in the CSS below. -->
@@ -108,7 +108,7 @@
        4. COMPONENTS
        ===================================================================== */
 
-    /* Logo — swap assets/logo.svg for the real file when available */
+    /* Logo — the official HM monogram, assets/logo.png */
     .logo {
       width: clamp(80px, 18vw, 120px);
       height: auto;
@@ -236,9 +236,9 @@
        ======================================================================= -->
   <main class="card">
 
-    <!-- LOGO  →  to use the official logo, replace assets/logo.svg
-                  (or point this src at the real file, e.g. assets/logo.png) -->
-    <img class="logo" src="assets/logo.svg" width="120" height="120"
+    <!-- LOGO  →  the official HM monogram (white on transparent).
+                  width/height match the art's aspect ratio to avoid layout shift. -->
+    <img class="logo" src="assets/logo.png" width="120" height="148"
          alt="Hayley Marché Events + Travel logo" />
 
     <p class="eyebrow">Coming Soon</p>
